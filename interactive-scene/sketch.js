@@ -1,13 +1,16 @@
+// Aiman Fatima Adnan
+// Interactive Scene Assignment 03/02/26
 // Extra For Experts; 2D Arrays 
 
 // creating 2D array 
 let board = [[0,0,0], [0,0,0], [0,0,0]];
 
 // creating variables
+let player = 'player1';
 let rows = 3;
 let cols = 3;
+let winner;
 let size;
-let player = 'player1';
 
 function setup() {
   createCanvas(400,400);
@@ -28,7 +31,6 @@ function draw() {
     
       // local variable to locate square in grid
       let cell = board[i][j];
-
     
       if (cell === 1) {
         drawX(x,y);
@@ -36,7 +38,24 @@ function draw() {
       else if (cell === 2) {
         drawO(x,y);
       }
-    }      
+    }
+  }
+
+  // announcing winner
+  if (winner) {
+    background(255);
+    textFont('impact')
+    fill(217, 1, 102);
+    noStroke();
+    textSize(100);
+    textAlign(CENTER, CENTER);
+
+    if (winner === 'player1') {
+      text ('X wins!', width/2, height/2);
+    }
+    else if (winner === 'player2') {
+      text ('O wins!', width/2, height/2);
+    }
   }
 }
 
@@ -59,15 +78,21 @@ function keyPressed() {
   let i = floor(mouseX / size);
   let j = floor(mouseY / size);
 
-  // ensures that a player doesn't go twice in a row
+  // ensures that a player doesn't go twice in a row, links keys to drawX and drawO functions
   if (board[i][j] === 0) {
     if (keyCode === 88 && player === 'player1') {
       board[i][j] = 1;
-      switchPlayer();
+      winOrLoss();
+      if (!winner) {
+        switchPlayer();
+      }
     }
     else if (keyCode === 79 && player === 'player2') {
       board[i][j] = 2;
-      switchPlayer();
+      winOrLoss();
+      if (!winner) {
+        switchPlayer();
+      }
     }
   }
 }
@@ -82,11 +107,20 @@ function switchPlayer() {
   }
 }
 
-function winOrLoss() {
-  // for (board[i][0]) {
-  //   if (board[i][0] === [1,1,1]) {
-  //     let winner = player1
+function winOrLoss() { 
+  // checks columns and rows for 3 X's or O's in a row
+  for (let x = 0; x < rows; x++ ){
+    if (board[x][0] != 0 && board[x][0] === board[x][1] && board[x][1] === board[x][2] || 
+        board[0][x] != 0 && board[0][x] === board[1][x] && board[1][x] === board[2][x] ) {
+          winner = player;
+        }
+      }
 
-  //   }
-  // }
-}
+  // checking diagonals
+  if (board[1][1] != 0) {
+    if ( board[0][0] === board[1][1] && board[1][1] === board[2][2] ||
+      board[0][2] === board[1][1] && board[1][1] === board[2][0] ) {
+        winner = player;
+        }
+      }
+    }
