@@ -1,7 +1,10 @@
 // Aiman Fatima Adnan
-// Interactive Scene Assignment 03/02/26
-// Tic Tac Toe game, use keys X and O to play
+// Interactive Scene Assignment 
+// 02/03/26
 // Extra For Experts; 2D Arrays 
+// Made a grid using a 2D array to locate each 'cell' and place an X or an O in that square,
+// then checked for winner by going through each cell and checking which one has 3 of the 
+// same values in a row
 
 // creating 2D array 
 let board = [[0,0,0], [0,0,0], [0,0,0]];
