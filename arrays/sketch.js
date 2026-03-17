@@ -20,7 +20,7 @@ function setup() {
       x: random(windowWidth),
       y: random(windowHeight),
       radius: random(20,200),
-      c: color(random(300, 360), 100, 100, 20)
+      c: color(random(300, 360), 100, 100, 20) 
     };
     picture.push(circles);
   }
