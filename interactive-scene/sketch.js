@@ -48,7 +48,7 @@ function draw() {
   // announcing winner
   if (winner) {
     background(255);
-    textFont('impact')
+    textFont('impact');
     fill(217, 1, 102);
     noStroke();
     textSize(100);
