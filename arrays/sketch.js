@@ -11,7 +11,7 @@ let picture = [];
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  colorMode(HSB, 300, 100, 100, 100);
+  colorMode(HSB, 360, 100, 100, 100);
   background(0); // 0 in HSB = to black
   
   // Creates circles of random width, height and size, and adds them to the array
@@ -30,10 +30,17 @@ function draw() {
   // Draws the circles in the list onto the screen
   for (let i = 0; i < picture.length; i++) {
     let p = picture[i];
-    for (let r = 0; i < 10; r++) {
-      
+
+    noFill();
+    stroke(p.c);
+    strokeWeight(1);
+    // Using 'r' for radius and 'd' for diameter
+    for (let r = 0; r < 10; r++) {
+      let d = (p.radius/10) * r;
+      ellipse(p.x, p.y, d)
     }
   }
+  noLoop();
   
 }
 
