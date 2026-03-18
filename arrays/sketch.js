@@ -27,13 +27,14 @@ function setup() {
 }
 
 function draw() {
-  // Draws the circles in the list onto the screen
+  // Draws the circles in the list onto the screen 
   for (let i = 0; i < picture.length; i++) {
     let p = picture[i];
 
     noFill();
     stroke(p.c);
     strokeWeight(1);
+    
     // Using 'r' for radius and 'd' for diameter
     for (let r = 0; r < 10; r++) {
       let d = (p.radius/10) * r;
