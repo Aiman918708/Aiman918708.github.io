@@ -116,9 +116,9 @@ function winOrLoss() {
   for (let x = 0; x < rows; x++ ){
     if (board[x][0] != 0 && board[x][0] === board[x][1] && board[x][1] === board[x][2] || 
         board[0][x] != 0 && board[0][x] === board[1][x] && board[1][x] === board[2][x] ) {
-          winner = player;
-        }
-      }
+    winner = player;
+    }
+    }
 
   // checking diagonals
   if (board[1][1] != 0) {

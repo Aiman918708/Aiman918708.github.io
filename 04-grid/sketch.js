@@ -5,13 +5,13 @@
 // Extra for Experts:
 // - describe what you did to take this project "above and beyond"
 
-let theGrid = [[1,0,1,0],
-               [1,0,1,0],
-               [0,1,0,0],
-               [0,1,0,1]];
+//let theGrid = [[1,0,1,0],
+ //              [1,0,1,0],
+ //              [0,1,0,0],
+ //              [0,1,0,1]];
 
-const SQUARE_DIMENSIONS = theGrid.length;
-
+let theGrid;
+const SQUARE_DIMENSIONS = 10;
 let cellSize;
 let cell;
 
@@ -28,10 +28,7 @@ function setup() {
 function draw() {
   background(220);
   showGrid();
-
-  if (mouseClicked) {
-    changeColor();
-  }
+  changeColor();
 }
 
 function showGrid() {
@@ -51,10 +48,19 @@ function showGrid() {
 }
 
 function changeColor() {
-  if (cell[y][x] === 1) {
-    cell = 0;
+  if (mouseClicked) {
+    if (cell[y][x] === 1) {
+      cell = 0;
+    }
+    else if (cell[y][x] === 0) {
+      cell[y][x] = 1;
+    }
   }
-  else if (cell[y][x] === 0) {
-    cell[y][x] = 1;
-  }
+}
+
+functionmousePressed() {
+  let x = Math.floor(mouseX/cellSize);
+  let y = Math.floor(mouseY/cellSize);
+
+
 }
