@@ -5,19 +5,44 @@
 // Extra for Experts:
 // - describe what you did to take this project "above and beyond"
 
-// Get picture and divide into cells
-// Create 2 Arrays, one for puzzle pieces and one empty
+// Making arrays to store and put pieces into
+puzzlePieces = [];
+puzzleBoard = [];
+
+// Variables
+let cols;
+let rows;
+let level;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
+
+  // Two boards side by side
+  
 }
-background('blue');
 
 function draw() {
-  background(220);
+  
 }
 
-// Create functions for different levels
+// Functions
+
+function selectScreen() {
+  background('green');
+  if (level === 1) {
+    easyMode();
+  }
+  else if (level === 2) {
+    difficultMode();
+  }
+}
+
+function displayGrids() {
+
+}
+
+
+// Creating functions for different levels
 
 // function easyMode()
 // function difficultMode()

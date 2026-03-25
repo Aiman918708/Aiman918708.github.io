@@ -5,6 +5,7 @@
 - [generative art] (01-art)
 - [arrays assignment] (arrays)
 - [2D Grid] (gameoflife)
+- [Character in Grid] (10-character)
 ## Assignments
 - [2D Grid] (grid - based game)
 
