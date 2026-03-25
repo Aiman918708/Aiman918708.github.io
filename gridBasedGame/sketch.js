@@ -11,9 +11,13 @@
 function setup() {
   createCanvas(windowWidth, windowHeight);
 }
+background('blue');
 
 function draw() {
   background(220);
 }
 
 // Create functions for different levels
+
+// function easyMode()
+// function difficultMode()
