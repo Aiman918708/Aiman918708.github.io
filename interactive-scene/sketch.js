@@ -1,6 +1,12 @@
+// Interactive Scene Assignment
 // Aiman Fatima Adnan
+<<<<<<< Updated upstream
 // Interactive Scene Assignment 
 // 02/03/26
+=======
+// 03/02/26
+// Tic Tac Toe game, use keys X and O to play
+>>>>>>> Stashed changes
 // Extra For Experts; 2D Arrays 
 // Made a grid using a 2D array to locate each 'cell' and place an X or an O in that square,
 // then checked for winner by going through each cell and checking which one has 3 of the 

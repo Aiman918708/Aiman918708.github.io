@@ -5,48 +5,50 @@
 // Extra for Experts:
 // - describe what you did to take this project "above and beyond"
 
-// Making arrays to store and put pieces into
+// Arrays
 puzzlePieces = [];
 puzzleBoard = [];
 
 // Variables
 let cols;
 let rows;
-let firstButton = {
-  w: 350,
-  h: 150
-};
-let secondButton = {
-  w: 350,
-  h: 150
-};
+let firstButton;
+let secondButton;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
 
-  firstButton.x = windowWidth/3 - (firstButton.w/1.5);
-  firstButton.y = windowHeight/3;
-
-  secondButton.x = (windowWidth*2)/3 - (secondButton.w/3);
-  secondButton.y =  windowHeight/3;
-  // Two boards side by side
-  
+  // Objects
+  firstButton = {
+    w: windowWidth/4,
+    h: windowHeight/4,
+    x: windowWidth/3 + width/1.5,
+    y: windowHeight/3 + height/2
+  };
+  secondButton = {
+    w: windowWidth/4,
+    h: windowHeight/4,
+    x: windowWidth*2/3 - width/3,
+    y: windowHeight/3+ height/2
+  };
 }
 
 function draw() {
   showScreen();
- // displayGrids();
+// displayGrids();
 }
 
 // Functions
 
 function showScreen() {
-  background(255, 255, 51);
-  strokeWeight(4);
-  stroke(255, 179, 222);
+  background(32,178,170);
+
+
+  strokeWeight(15);
+  stroke(205,92,92);
   
-  fill(242, 15, 143);
-  rect(firstButton.x, firstButton.y, firstButton.w, firstButton.h, 20);
-  rect(secondButton.x, secondButton.y, secondButton.w, secondButton.h, 20);
+  fill(255,192,203);
+  rect(firstButton.x, firstButton.y, firstButton.w, firstButton.h, 25);
+  rect(secondButton.x, secondButton.y, secondButton.w, secondButton.h, 25);
 }
   
