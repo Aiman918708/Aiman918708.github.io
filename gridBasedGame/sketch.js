@@ -10,45 +10,30 @@ puzzlePieces = [];
 puzzleBoard = [];
 
 // Variables
-let cols;
-let rows;
-let firstButton;
-let secondButton;
+let cols = 5;
+let rows = 5;
 
+
+ 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-
-  // Objects
-  firstButton = {
-    w: windowWidth/4,
-    h: windowHeight/4,
-    x: windowWidth/3 + width/1.5,
-    y: windowHeight/3 + height/2
-  };
-  secondButton = {
-    w: windowWidth/4,
-    h: windowHeight/4,
-    x: windowWidth*2/3 - width/3,
-    y: windowHeight/3+ height/2
-  };
 }
 
 function draw() {
-  showScreen();
-// displayGrids();
+  displayGrids();
 }
 
 // Functions
 
-function showScreen() {
-  background(32,178,170);
+function displayGrids() {
 
+  let cellSize = windowWidth/25;
+  let offset = windowWidth * 0.4;
 
-  strokeWeight(15);
-  stroke(205,92,92);
-  
-  fill(255,192,203);
-  rect(firstButton.x, firstButton.y, firstButton.w, firstButton.h, 25);
-  rect(secondButton.x, secondButton.y, secondButton.w, secondButton.h, 25);
+  for (let i = 0;i < cols; i++) {
+    for (let j = 0; j < rows; j++) {
+      rect(cellSize * i + windowWidth/10, cellSize * j, cellSize, cellSize);
+      rect(cellSize * i + offset, cellSize * j, cellSize, cellSize);
+    }
+  }
 }
-  
