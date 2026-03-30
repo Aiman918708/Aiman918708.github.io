@@ -6,34 +6,35 @@
 // - describe what you did to take this project "above and beyond"
 
 // Arrays
-puzzlePieces = [];
-puzzleBoard = [];
+puzzlePieces = [[0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0]];
+puzzleBoard = [[0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0]];
 
 // Variables
 let cols = 5;
 let rows = 5;
-
-
  
 function setup() {
   createCanvas(windowWidth, windowHeight);
 }
 
 function draw() {
+  background(204,63,100);
   displayGrids();
 }
 
 // Functions
 
 function displayGrids() {
+  const CELL_SIZE = windowWidth/15;
+  let offset = windowWidth * 0.6;
 
-  let cellSize = windowWidth/25;
-  let offset = windowWidth * 0.4;
+  rectMode(CENTER);
+  
 
   for (let i = 0;i < cols; i++) {
     for (let j = 0; j < rows; j++) {
-      rect(cellSize * i + windowWidth/10, cellSize * j, cellSize, cellSize);
-      rect(cellSize * i + offset, cellSize * j, cellSize, cellSize);
+      rect(CELL_SIZE * i + windowWidth/6, CELL_SIZE * j + windowHeight/5, CELL_SIZE, CELL_SIZE, 5);
+      rect(CELL_SIZE * i + offset, CELL_SIZE * j + windowHeight/5, CELL_SIZE, CELL_SIZE, 5);
     }
   }
 }
