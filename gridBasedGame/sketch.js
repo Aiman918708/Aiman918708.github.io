@@ -7,7 +7,7 @@
 
 // Arrays
 puzzlePieces = [[0,0,0,0,0,0,0,0,0,0], [0,0,0,0,0,0,0,0,0,0]];
-puzzleBoard = [[1,2,3,4,5,6], [1,2,3,4,5,6], [1,2,3,4,5,6], [1,2,3,4,5,6], [1,2,3,4,5,6], [1,2,3,4,5,6]];
+puzzleBoard = [[1,2,3,4,5,6], [7,8,9,10,11,12], [13,14,15,16,17,18], [19,20,21,22,23,24], [25,26,27,28,29,30], [31,32,33,34,35,36]];
 
 // Variables 
 let cols;
@@ -21,13 +21,14 @@ function setup() {
 
 function draw() {
   background(255, 102, 102);
-  showFirstGrid();
-  showSecondGrid();
+  displayGrids();
+  displayImages();
 }
 
 // Functions
 
-function showFirstGrid() {
+function displayGrids() {
+  // Grid One
   let rows = puzzleBoard.length;
   let cols = puzzleBoard[0].length;
 
@@ -41,11 +42,10 @@ function showFirstGrid() {
       rect(x, y, cellSize, cellSize);
     }
   }
-}
 
-function showSecondGrid() {
-  let rows = puzzlePieces[0].length;
-  let cols = puzzlePieces.length;
+  // Grid Two
+  rows = puzzlePieces[0].length;
+  cols = puzzlePieces.length;
   let gridWidth = rows * cellSize;
 
   // Nested for loop displaying a 2x18 grid
@@ -59,15 +59,27 @@ function showSecondGrid() {
   }
 }
 
-// Adding image next to grid
-const IMG = document.createElement('IMG');
-IMG.src = './images/picture.jpg';
-IMG.alt = 'Reference picture for the puzzle';
-document.body.appendChild(IMG);
+function displayImages() {
+  // Adding picture next to first grid
+  const IMG = document.createElement('IMG');
+  IMG.src = './images/picture.jpg';
+  IMG.alt = 'Reference picture for the puzzle';
+  document.body.appendChild(IMG);
 
-// Positioning and sizing image
-IMG.style.position = 'fixed';
-IMG.style.left = window.innerWidth/1.75 + 'px';
-IMG.style.top = window.innerHeight/15 + 'px';
-IMG.style.width = window.innerWidth/20 * 6 + 'px';
-IMG.style.height = window.innerWidth/20 * 6 + 'px';
+  // Positioning and sizing 
+  IMG.style.position = 'fixed';
+  IMG.style.left = window.innerWidth/1.75 + 'px';
+  IMG.style.top = window.innerHeight/15 + 'px';
+  IMG.style.width = window.innerWidth/20 * 6 + 'px';
+  IMG.style.height = window.innerWidth/20 * 6 + 'px';
+
+  // Picture pieces in second grid
+  const PIECES = document.createElement('PIECES');
+
+}
+
+function movePiece() {
+}
+
+function reset() {
+}
