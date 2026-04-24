@@ -9,7 +9,7 @@
 // Arrays
 let piecesTray = []; // Stores pieces
 let puzzleBoard = [[0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0],
-               [0,0,0,0,0,0], [0,0,0,0,0,0]]; //  Board to solve puzzle
+  [0,0,0,0,0,0], [0,0,0,0,0,0]]; //  Board to solve puzzle
 
 // Variables 
 let cellSize;
@@ -25,11 +25,11 @@ function setup() {
   cellSize = width/20;
 
   // Calculating piece size
-   let w = referenceIMG.width/6;
-   let h = referenceIMG.height/6;
-
-   // For loop to cut through image
-   for (let y = 0; y < 6; y++) {
+  let w = referenceIMG.width/6;
+  let h = referenceIMG.height/6;
+ 
+  // For loop to cut through image
+  for (let y = 0; y < 6; y++) {
     for (let x = 0; x < 6; x++) {
       let imgSlice = referenceIMG.get(x * w, y * h, w, h);
 
@@ -41,10 +41,10 @@ function setup() {
       // Push piece into second grid/tray
       piecesTray.push(new Piece(imgSlice, xStart, yStart, cellSize));
     }
-   }
-
-   shufflePieces(piecesTray);
   }
+
+  shufflePieces(piecesTray);
+}
 
 function draw() {
   background(255, 102, 102);
