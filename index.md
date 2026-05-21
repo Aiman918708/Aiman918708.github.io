@@ -6,6 +6,7 @@
 - [arrays assignment] (arrays)
 - [2D Grid] (gameoflife)
 - [Character in Grid] (10-character)
+- [reccircles]
 ## Assignments
 - [2D Grid] (grid - based game)
 
